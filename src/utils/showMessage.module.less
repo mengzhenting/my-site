@@ -1,0 +1,35 @@
+@import "../styles/mixin.less";
+@import "../styles/var.less";
+.message{
+    .self-center();
+    z-index: 999;
+    box-shadow: 0;
+    border-radius: 5px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px 30px;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+    transition: .5s;
+    transform: translate(-50%,-50%) translateY(25px);
+    opacity: 0;
+    white-space: nowrap;
+    color: #fff;
+    &-iconxinxi{
+        background-color: @primary;
+    }
+    &-iconzhengque{
+        background-color: @success;
+    }
+    &-iconjinggao{
+        background-color: @warn;
+    }
+    &-iconcuowu{
+        background-color: @danger;
+    }
+}
+.icon{
+    font-size: 24px;
+    color: #fff;
+    margin-right: 10px;
+}
