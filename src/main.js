@@ -18,6 +18,8 @@ import vloading from "./directive/loading"
 import vlazy from "./directive/lazy"
 Vue.directive("loading", vloading)
 Vue.directive("lazy", vlazy)
+
+store.dispatch('loginUser/whoAmI')
 new Vue({
   store,
   router,

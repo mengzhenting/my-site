@@ -2,7 +2,8 @@
   <div class="site-aside-container">
     <template v-if="data">
       <Avatar :url="data.avatar" />
-      <div class="name">{{ data.siteTitle }}</div>
+      <!-- <div class="name">{{ data.siteTitle }}</div> -->
+      <UserName />
     </template>
 
     <Menu />
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import UserName from "@/Login/UserName.vue";
 import Avatar from "@/components/Avatar";
 import Contact from "./Contact";
 import Menu from "./Menu";
@@ -21,6 +23,7 @@ export default {
     Avatar,
     Contact,
     Menu,
+    UserName,
   },
   computed: {
     ...mapState("setting", ["data"]),

@@ -1,12 +1,17 @@
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form class="form-login" @submit.prevent="handleSubmit">
     <div class="form-item">
       <label>账号：</label>
-      <input type="text" v-model="loginId" />
+      <input placeholder="admin" type="text" v-model="loginId" />
     </div>
     <div class="form-item">
       <label>密码：</label>
-      <input type="password" autocomplete="new-password" v-model="loginPwd" />
+      <input
+        type="password"
+        placeholder="123123"
+        autocomplete="new-password"
+        v-model="loginPwd"
+      />
     </div>
     <div class="form-item">
       <label></label>
@@ -41,17 +46,31 @@ export default {
         loginPwd: this.loginPwd,
       });
       if (resp) {
-          const path = this.$route.query.returnurl || "/"
+        this.$showMessage({
+          content: "登录成功",
+          type: "iconzhengque",
+          duration: 1000,
+        });
+        const path = this.$route.query.returnurl || "/";
         this.$router.push(path);
       } else {
-        alert("账号密码错误");
+        // alert("账号密码错误");
+        this.$showMessage({
+          content: "账号密码错误",
+          type: "iconcuowu",
+          duration: 1000,
+        });
       }
     },
   },
 };
 </script>
 
-<style>
+<style scoped lang="less">
+@import "~@/styles/mixin.less";
+.form-login {
+  .self-center();
+}
 .form-item {
   margin: 1em auto;
   width: 300px;

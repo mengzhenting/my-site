@@ -10,7 +10,7 @@ export default {
       (status) => {
         if (status !== "loading") {
           this.$router
-            .push(this.$route.query.returnurl || "/home")
+            .push(this.$route.query.returnurl || "/")
             .catch(() => {});
         }
       },

@@ -40,6 +40,8 @@ export default [
             title: "首页",
         },
     },
+    { path: "/loading", component: () => import("@/Login/Loading") },
+    { path: "/login", component: () => import("@/Login/Login") },
     {
         name: "About",
         path: "/about",
@@ -48,6 +50,8 @@ export default [
         ),
         meta: {
             title: "关于我",
+            //是否有权限
+            auth: true,
         },
     },
     {
@@ -58,6 +62,7 @@ export default [
         ),
         meta: {
             title: "文章",
+            auth: true,
         },
     },
     {
@@ -68,6 +73,7 @@ export default [
         ),
         meta: {
             title: "文章",
+            auth: true,
         },
     },
     {
@@ -78,6 +84,7 @@ export default [
         ),
         meta: {
             title: "文章详情",
+            auth: true,
         },
     },
     {
@@ -88,6 +95,7 @@ export default [
         ),
         meta: {
             title: "项目&效果",
+            auth: true,
         },
     },
     {
@@ -98,6 +106,7 @@ export default [
         ),
         meta: {
             title: "留言板",
+            auth: true,
         },
     },
     {

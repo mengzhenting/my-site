@@ -1,41 +1,24 @@
 <template>
-  <div class="about-container" v-loading="loading || !srcLoaed">
-    <iframe
+  <div class="about-container">
+    <!-- <iframe
       v-if="data"
       class="about-content"
       :src="data"
       frameborder="0"
       @load="srcLoaed = true"
-    ></iframe>
+    ></iframe> -->
+    <img src="@/assets/about.jpg" alt="" />
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-export default {
-  data() {
-    return {
-      srcLoaed: false,
-    };
-  },
-  created() {
-    this.$store.dispatch("about/fetchAbout");
-  },
-  computed: mapState("about", ["data", "loading"]),
-};
+export default {};
 </script>
 
 <style lang="less" scoped>
 .about-container {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-.about-content {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+  overflow-y: auto;
 }
 </style>
